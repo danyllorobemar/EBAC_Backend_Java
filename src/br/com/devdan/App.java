@@ -16,14 +16,22 @@ public class App {
         System.out.println("Insira a nota 04: ");
         double n4 = sc.nextDouble();
 
-        calcularMedia(n1, n2, n3, n4);
+        double media = calcularMedia(n1, n2, n3, n4);
+        System.out.println("Média igual a " + media);
+
+        if(media >= 7)
+            System.out.println("O aluno está aprovado!");
+         else if (media >= 5 && media < 7)
+            System.out.println("O aluno está em recuperação.");
+         else
+            System.out.println("O aluno está reprovado.");
 
         sc.close();
     }
 
-    public static void calcularMedia(double n1, double n2, double n3, double n4){
+    public static double calcularMedia(double n1, double n2, double n3, double n4){
         double media = (n1 + n2 + n3 + n4) / 4;
-        System.out.println("A média é " + media);
+        return media;
     }
 }
 
